@@ -20,6 +20,7 @@ class BaseConfig:
     SECRET_KEY = os.environ.get("SECRET_KEY") or "abcdefg132456"
     ENVIRONMENT = os.environ.get("ENVIRONMENT")
     DATABASE_URL = os.environ.get("DATABASE_URL_DEV")
+    POSTS_PER_PAGE = os.environ.get("POSTS_PER_PAGE")
 
 
 class DevelopmentConfig(BaseConfig):

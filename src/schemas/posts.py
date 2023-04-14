@@ -1,7 +1,9 @@
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel
+
+from src.schemas import Pagination
 
 
 class PostBase(BaseModel):
@@ -21,3 +23,8 @@ class PostResponse(PostBase):
 
     class Config:
         orm_mode = True
+
+
+class PostManyResponse(Pagination):
+    items: List[PostResponse]
+    total: int
