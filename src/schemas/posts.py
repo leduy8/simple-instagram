@@ -28,3 +28,10 @@ class PostResponse(PostBase):
 class PostManyResponse(Pagination):
     items: List[PostResponse]
     total: int
+
+
+class PostSimpleResponse(BaseModel):
+    id: int
+    title: str
+    published: bool
+    created_at: datetime

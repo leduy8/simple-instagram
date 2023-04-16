@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 
-from src.controllers import posts
+from src.controllers import posts, users
 from src.database import Base, engine
 
 app = FastAPI()
-app.include_router(posts.router)
+app.include_router(users.router)
+# app.include_router(posts.router)
 
 
 @app.get("/")

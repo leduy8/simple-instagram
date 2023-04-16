@@ -10,7 +10,8 @@ class User(BaseModel):
 
     email = Column(String(254), index=True, unique=True, nullable=False)
     password_hash = Column(String(128), nullable=False)
-    name = Column(String(50), nullable=False)
+    password_salt = Column(String(12), nullable=False)
+    name = Column(String(50), nullable=True)
     posts = relationship("Post", back_populates="user")
     avatar = relationship("Avatar", back_populates="user", uselist=False)
 
